@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://F:/song/SYSU/multimodal" />
+    <type id="Spring" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../Flume/pom.xml" />
+        <option value="$PROJECT_DIR$/../FlumeInterceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/../GmallMockDB/pom.xml" />
+        <option value="$PROJECT_DIR$/../GmallMockLog/pom.xml" />
+        <option value="$PROJECT_DIR$/../HBase/pom.xml" />
+        <option value="$PROJECT_DIR$/../HDFS0317/pom.xml" />
+        <option value="$PROJECT_DIR$/../hive/pom.xml" />
+        <option value="$PROJECT_DIR$/../Kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/../MapReduce0317/pom.xml" />
+        <option value="$PROJECT_DIR$/../Phoenix/pom.xml" />
+        <option value="$PROJECT_DIR$/../Scala/pom.xml" />
+        <option value="$PROJECT_DIR$/../Zookeeper/pom.xml" />
+        <option value="F:/song/SYSU/multimodal_optimization/pom.xml" />
+        <option value="$PROJECT_DIR$/../../13-HBase/hbase/zkInspector/pom.xml" />
+        <option value="$PROJECT_DIR$/../mapreduce/pom (2).xml" />
+        <option value="$PROJECT_DIR$/../mapreduce/pom.xml" />
+        <option value="$PROJECT_DIR$/../springview/pom.xml" />
+        <option value="F:/song/SYSU/multimodal/pom.xml" />
+        <option value="$PROJECT_DIR$/../Gmall/pom.xml" />
+        <option value="$PROJECT_DIR$/../Gmall/gmall-logger/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spark/pom.xml" />
+        <option value="$PROJECT_DIR$/../Gmall/gmall-realtime/pom.xml" />
+        <option value="$PROJECT_DIR$/../Gmall/gmall-publisher/pom.xml" />
+        <option value="G:/BaiduNetdiskDownload/实时项目/Spark实时分析项目资料/03_代码/dw-chart/pom.xml" />
+        <option value="$PROJECT_DIR$/../Hdfs/pom.xml" />
+        <option value="$PROJECT_DIR$/../ElasticSearch/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>

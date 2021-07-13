@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dw-chart" />
+        <module name="ElasticSearch" />
+        <module name="Flink" />
+        <module name="Flume" />
+        <module name="FlumeInterceptor" />
+        <module name="gmall-canal" />
+        <module name="gmall-common" />
+        <module name="gmall-logger" />
+        <module name="gmall-mocker" />
+        <module name="gmall-publisher" />
+        <module name="gmall-realtime" />
+        <module name="GmallMockDB" />
+        <module name="GmallMockLog" />
+        <module name="HBase" />
+        <module name="Hdfs" />
+        <module name="hive" />
+        <module name="kafka" />
+        <module name="Log4j" />
+        <module name="mapreduce" />
+        <module name="MapReduce0317" />
+        <module name="Phoenix" />
+        <module name="Scala" />
+        <module name="Spark" />
+        <module name="springview" />
+        <module name="Zookeeper" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.atguigu.mapreduce" target="1.8" />
+      <module name="dw-chart" target="1.8" />
+      <module name="ElasticSearch" target="1.8" />
+      <module name="Flink" target="1.8" />
+      <module name="Flume" target="1.8" />
+      <module name="FlumeInterceptor" target="1.8" />
+      <module name="Gmall" target="1.8" />
+      <module name="gmall-canal" target="1.8" />
+      <module name="gmall-common" target="1.8" />
+      <module name="gmall-logger" target="1.8" />
+      <module name="gmall-mocker" target="1.8" />
+      <module name="gmall-publisher" target="1.8" />
+      <module name="gmall-realtime" target="1.8" />
+      <module name="GmallCommon" target="1.8" />
+      <module name="GmallMockDB" target="1.8" />
+      <module name="GmallMocker" target="1.8" />
+      <module name="GmallMockLog" target="1.8" />
+      <module name="HBase" target="1.8" />
+      <module name="Hdfs" target="1.8" />
+      <module name="hive" target="1.8" />
+      <module name="kafka" target="1.8" />
+      <module name="Log4j" target="1.8" />
+      <module name="mapreduce" target="1.8" />
+      <module name="MapReduce0317" target="1.8" />
+      <module name="multimodal" target="1.8" />
+      <module name="Phoenix" target="1.8" />
+      <module name="Scala" target="1.8" />
+      <module name="Spark" target="1.8" />
+      <module name="spark0223" target="1.8" />
+      <module name="springview" target="1.8" />
+      <module name="zkInspector" target="1.8" />
+      <module name="Zookeeper" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

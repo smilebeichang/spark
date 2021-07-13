@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ElasticSearch/ElasticSearch.iml" filepath="$PROJECT_DIR$/../ElasticSearch/ElasticSearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flink.iml" filepath="$PROJECT_DIR$/Flink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Flume/Flume.iml" filepath="$PROJECT_DIR$/../Flume/Flume.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FlumeInterceptor/FlumeInterceptor.iml" filepath="$PROJECT_DIR$/../FlumeInterceptor/FlumeInterceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/Gmall.iml" filepath="$PROJECT_DIR$/../Gmall/Gmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GmallMockDB/GmallMockDB.iml" filepath="$PROJECT_DIR$/../GmallMockDB/GmallMockDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GmallMockLog/GmallMockLog.iml" filepath="$PROJECT_DIR$/../GmallMockLog/GmallMockLog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HBase/HBase.iml" filepath="$PROJECT_DIR$/../HBase/HBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Hdfs/Hdfs.iml" filepath="$PROJECT_DIR$/../Hdfs/Hdfs.iml" />
+      <module fileurl="file://F:/song/SYSU/Log4j/Log4j.iml" filepath="F:/song/SYSU/Log4j/Log4j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Phoenix/Phoenix.iml" filepath="$PROJECT_DIR$/../Phoenix/Phoenix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Scala/Scala.iml" filepath="$PROJECT_DIR$/../Scala/Scala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Spark/Spark.iml" filepath="$PROJECT_DIR$/../Spark/Spark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Zookeeper/Zookeeper.iml" filepath="$PROJECT_DIR$/../Zookeeper/Zookeeper.iml" />
+      <module fileurl="file://G:/BaiduNetdiskDownload/实时项目/Spark实时分析项目资料/03_代码/dw-chart/dw-chart.iml" filepath="G:/BaiduNetdiskDownload/实时项目/Spark实时分析项目资料/03_代码/dw-chart/dw-chart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-canal/gmall-canal.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-canal/gmall-canal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-common/gmall-common.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-common/gmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-logger/gmall-logger.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-logger/gmall-logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-mocker/gmall-mocker.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-mocker/gmall-mocker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-publisher/gmall-publisher.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-publisher/gmall-publisher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Gmall/gmall-realtime/gmall-realtime.iml" filepath="$PROJECT_DIR$/../Gmall/gmall-realtime/gmall-realtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hive/hive.iml" filepath="$PROJECT_DIR$/../hive/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Kafka/kafka.iml" filepath="$PROJECT_DIR$/../Kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mapreduce/mapreduce.iml" filepath="$PROJECT_DIR$/../mapreduce/mapreduce.iml" />
+      <module fileurl="file://F:/song/SYSU/multimodal/multimodal.iml" filepath="F:/song/SYSU/multimodal/multimodal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springview/springview.iml" filepath="$PROJECT_DIR$/../springview/springview.iml" />
+    </modules>
+  </component>
+</project>
