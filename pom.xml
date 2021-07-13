@@ -8,7 +8,7 @@
     <artifactId>Flink</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <!--  测试提交 gitee-->
 
     <properties>
         <flink.version>1.12.0</flink.version>
