@@ -9,6 +9,7 @@ public class Hello {
     public static void main(String[] args) {
         System.out.println("hello gitee");
         System.out.println("hello origin");
+        System.out.println("888 origin");
     }
 }
 
