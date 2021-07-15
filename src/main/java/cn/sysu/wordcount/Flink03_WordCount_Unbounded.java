@@ -24,16 +24,17 @@ public class Flink03_WordCount_Unbounded {
         // 1. 创建流式执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         // 2. 读取文件
-        DataStreamSource<String> lineDSS = env.socketTextStream("ecs2", 9999);
+        DataStreamSource<String> lineDSS = env.socketTextStream("hadoop162", 9999);
         // 3. 转换数据格式
         SingleOutputStreamOperator<Tuple2<String, Long>> wordAndOne = lineDSS
                 .flatMap((String line, Collector<String> words) -> {
                     Arrays.stream(line.split(" ")).forEach(words::collect);
                 })
+                // lambdas 表达式
                 .returns(Types.STRING)
                 .map(word -> Tuple2.of(word, 1L))
                 .returns(Types.TUPLE(Types.STRING, Types.LONG));
-        // 4. 分组
+        // 4. 分组  lambdas
         KeyedStream<Tuple2<String, Long>, String> wordAndOneKS = wordAndOne
                 .keyBy(t -> t.f0);
         // 5. 求和

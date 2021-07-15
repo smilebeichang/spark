@@ -19,6 +19,8 @@ public class Flink02_WordCount_Bounded {
     public static void main(String[] args) throws Exception {
         // 1. 创建流式执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        // 设置并行度，更方便查看结果
+        env.setParallelism(1);
         // 2. 读取文件
         DataStreamSource<String> lineDSS = env.readTextFile("E:\\BaiduNetdiskDownload\\02-hadhoop\\01-Maven\\Flink\\input\\words.txt");
         // 3. 转换数据格式

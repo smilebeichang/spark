@@ -5,3 +5,5 @@ Flink.iml
 classes/production/ZooInspector/generated/
 src/test/
 target/
+.gitignore
+src/main/java/cn/edu/sysu/filter/
