@@ -36,6 +36,9 @@ public class MySource implements SourceFunction<WaterSensor> {
         }
     }
 
+    /**
+     *  flag 关闭 while, socket 关闭
+     */
     @Override
     public void cancel() {
         isRunning = false;

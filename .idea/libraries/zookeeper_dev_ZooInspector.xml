@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="zookeeper-dev-ZooInspector">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../13-HBase/hbase/ZooInspector/build/zookeeper-dev-ZooInspector.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

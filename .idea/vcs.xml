@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Hdfs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Spark" vcs="Git" />
     <mapping directory="F:/song/SYSU/Log4j" vcs="Git" />
     <mapping directory="F:/song/SYSU/multimodal" vcs="Git" />
   </component>

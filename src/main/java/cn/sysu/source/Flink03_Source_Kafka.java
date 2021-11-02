@@ -3,6 +3,7 @@ package cn.sysu.source;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import org.apache.flink.streaming.util.serialization.JSONKeyValueDeserializationSchema;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 
 import java.util.Properties;
@@ -15,13 +16,16 @@ public class Flink03_Source_Kafka {
 
     public static void main(String[] args) throws Exception {
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers","ecs2:9092,ecs3:9092,ecs4:9092");
+        properties.setProperty("bootstrap.servers","hadoop162:9092,hadoop163:9092,hadoop164:9092");
         properties.setProperty("group.id","Flink03_Source_Kafka");
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"latest");
 
         //创建执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.addSource(new FlinkKafkaConsumer<>("sensor",new SimpleStringSchema(),properties)).print();
+        // 反序列化器 SimpleStringSchema JSONKeyValueDeserializationSchema
+        env.addSource(new FlinkKafkaConsumer<>("sensor",new JSONKeyValueDeserializationSchema(true),properties)).print();
+
+
 
         env.execute();
     }

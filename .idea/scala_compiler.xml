@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="spark0223,Spark,gmall-realtime" />
+    <profile name="Maven 1" modules="spark0223,gmall-realtime,Spark" />
   </component>
 </project>

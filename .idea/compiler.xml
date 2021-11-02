@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Algorithm" />
         <module name="dw-chart" />
         <module name="ElasticSearch" />
         <module name="Flink" />
@@ -15,15 +16,20 @@
         <module name="gmall-canal" />
         <module name="gmall-common" />
         <module name="gmall-logger" />
+        <module name="gmall-logger2" />
         <module name="gmall-mocker" />
         <module name="gmall-publisher" />
         <module name="gmall-realtime" />
+        <module name="gmall_logger" />
+        <module name="gmall_publisher" />
+        <module name="gmall_realtime" />
         <module name="GmallMockDB" />
         <module name="GmallMockLog" />
         <module name="HBase" />
         <module name="Hdfs" />
         <module name="hive" />
         <module name="kafka" />
+        <module name="LeetCode" />
         <module name="Log4j" />
         <module name="mapreduce" />
         <module name="MapReduce0317" />
@@ -35,6 +41,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Algorithm" target="1.8" />
       <module name="com.atguigu.mapreduce" target="1.8" />
       <module name="dw-chart" target="1.8" />
       <module name="ElasticSearch" target="1.8" />
@@ -45,9 +52,13 @@
       <module name="gmall-canal" target="1.8" />
       <module name="gmall-common" target="1.8" />
       <module name="gmall-logger" target="1.8" />
+      <module name="gmall-logger2" target="1.8" />
       <module name="gmall-mocker" target="1.8" />
       <module name="gmall-publisher" target="1.8" />
       <module name="gmall-realtime" target="1.8" />
+      <module name="gmall_logger" target="1.8" />
+      <module name="gmall_publisher" target="1.8" />
+      <module name="gmall_realtime" target="1.8" />
       <module name="GmallCommon" target="1.8" />
       <module name="GmallMockDB" target="1.8" />
       <module name="GmallMocker" target="1.8" />
@@ -56,11 +67,15 @@
       <module name="Hdfs" target="1.8" />
       <module name="hive" target="1.8" />
       <module name="kafka" target="1.8" />
+      <module name="LeetCode" target="1.8" />
       <module name="Log4j" target="1.8" />
+      <module name="logger" target="1.8" />
       <module name="mapreduce" target="1.8" />
       <module name="MapReduce0317" target="1.8" />
+      <module name="master" target="1.8" />
       <module name="multimodal" target="1.8" />
       <module name="Phoenix" target="1.8" />
+      <module name="RealTime" target="1.8" />
       <module name="Scala" target="1.8" />
       <module name="Spark" target="1.8" />
       <module name="spark0223" target="1.8" />

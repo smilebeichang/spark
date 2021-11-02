@@ -34,6 +34,11 @@
         <option value="G:/BaiduNetdiskDownload/实时项目/Spark实时分析项目资料/03_代码/dw-chart/pom.xml" />
         <option value="$PROJECT_DIR$/../Hdfs/pom.xml" />
         <option value="$PROJECT_DIR$/../ElasticSearch/pom.xml" />
+        <option value="$PROJECT_DIR$/../LeetCode/pom.xml" />
+        <option value="$PROJECT_DIR$/../RealTime/pom.xml" />
+        <option value="$PROJECT_DIR$/../RealTime/gmall_logger/pom.xml" />
+        <option value="$PROJECT_DIR$/../Algorithm/pom.xml" />
+        <option value="$PROJECT_DIR$/../RealTime/gmall_publisher/pom.xml" />
       </list>
     </option>
   </component>

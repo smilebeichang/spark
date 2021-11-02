@@ -10,16 +10,17 @@ import java.nio.file.Path;
  * @create 2021/4/18 21:50
  */
 public class Flink02_Source_File {
+
     static  String  absoult_path = "E:\\BaiduNetdiskDownload\\02-hadhoop\\01-Maven\\Flink\\input\\words.txt";
 
     static String relative_path = "input";
 
-    //hdfs 执行无法识别
-    static String hdfs_path = "hdfs://mycluster/input";
+    //hdfs 执行无法识别  flink默认未添加hadoop的相关jar,添加依赖即可
+    static String hdfs_path = "hdfs://hadoop162:8020/mycluster/input";
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStreamSource<String> dataStreamSource = env.readTextFile(relative_path);
+        DataStreamSource<String> dataStreamSource = env.readTextFile(hdfs_path);
         dataStreamSource.print();
         env.execute();
     }
