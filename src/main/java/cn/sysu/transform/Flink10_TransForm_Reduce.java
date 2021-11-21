@@ -9,12 +9,15 @@ import java.util.ArrayList;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/19 0:19
+ * @create 2021/11/21 00:37
  */
 public class Flink10_TransForm_Reduce {
 
 
-
+    /**
+     * 流式聚合
+     *
+     */
     public static void main(String[] args) throws Exception {
 
         ArrayList<WaterSensor> waterSensors = new ArrayList<>();
@@ -29,6 +32,7 @@ public class Flink10_TransForm_Reduce {
     }
 
     public static void anonymous(ArrayList<WaterSensor> waterSensors) throws Exception {
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         KeyedStream<WaterSensor, String> kbSteam = env.fromCollection(waterSensors)
@@ -46,6 +50,7 @@ public class Flink10_TransForm_Reduce {
     }
 
     public static void lambda(ArrayList<WaterSensor> waterSensors) throws Exception {
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         KeyedStream<WaterSensor, String> kbSteam = env.fromCollection(waterSensors)
                 .keyBy(WaterSensor::getId);

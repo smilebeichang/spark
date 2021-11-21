@@ -10,13 +10,13 @@ import java.util.EventListener;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 23:11
+ * @create 2021/11/21 00:23
  */
 public class Flink03_TransForm_Flat_Anonymous {
 
     public static void main(String[] args) throws Exception {
 
-//        anonymous();
+        anonymous();
         lambda();
 
     }
@@ -32,7 +32,7 @@ public class Flink03_TransForm_Flat_Anonymous {
             }
         });
 
-        streamOperator.print();
+        streamOperator.print("anonymous");
 
         env.execute();
 
@@ -44,7 +44,7 @@ public class Flink03_TransForm_Flat_Anonymous {
         env.fromElements(1,2,3,4,5).flatMap((Integer value,Collector<Integer> out) -> {
             out.collect(value * value);
             out.collect(value * value * value);
-        }).returns(Types.INT).print();
+        }).returns(Types.INT).print("lambda");
 
         env.execute();
 

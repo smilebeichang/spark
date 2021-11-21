@@ -32,6 +32,7 @@ public class Flink06_Project_Order {
                             Long.valueOf(datas[3]));
 
                 });
+
         // 2. 读取交易流
         SingleOutputStreamOperator<TxEvent> txDS = env
                 .readTextFile("input/ReceiptLog.csv")

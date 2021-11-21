@@ -11,7 +11,7 @@ import org.apache.flink.util.Collector;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/17 22:56
+ * @create 2021/11/20 22:56
  */
 public class Flink01_WordCount_Batch {
 

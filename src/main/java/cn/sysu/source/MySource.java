@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 22:31
+ * @create 2021/11/10 22:31
  */
 public class MySource implements SourceFunction<WaterSensor> {
 

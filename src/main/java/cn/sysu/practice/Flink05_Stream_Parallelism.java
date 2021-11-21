@@ -1,4 +1,4 @@
-package cn.sysu.source;
+package cn.sysu.practice;
 
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -8,8 +8,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.Collector;
 
 /**
- * @Author lizhenchao@atguigu.cn
- * @Date 2021/7/14 10:29
+ * @Author
+ * @Date 2021/11/10 10:29
  */
 public class Flink05_Stream_Parallelism {
 
@@ -68,34 +68,3 @@ public class Flink05_Stream_Parallelism {
         env.execute();
     }
 }
-/*
-如何控制操作链:
-
-1. .startNewChain()
-    从当前算子开启一个新链
-    
-2. .disableChaining()
-    当前算子不会和任何的算子组成链
-    
-3.env.disableOperatorChaining();
-    全局禁用操作链
-
-
-
-给算子设置并行度:
-1. 在配置文件中 flink.yaml
-    parallelism.default: 1
-    
-2. 在提交job的时候通过参数传递
-    -p 3
-
-3. 通过执行环境来设置并行度
-    env.setParallelism(1);
-    
-4. 单独的给每个算子设置并行度
- 
-
-
-
-
- */

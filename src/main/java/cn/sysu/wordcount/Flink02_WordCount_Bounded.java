@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/17 23:37
+ * @create 2021/11/20 23:37
  */
 public class Flink02_WordCount_Bounded {
 

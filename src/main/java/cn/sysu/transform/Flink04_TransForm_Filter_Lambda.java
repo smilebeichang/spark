@@ -8,12 +8,12 @@ import org.apache.flink.util.Collector;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 23:28
+ * @create 2021/11/21 00:23
  */
 public class Flink04_TransForm_Filter_Lambda {
 
     public static void main(String[] args) throws Exception {
-//        anonymous();
+        anonymous();
         lambda();
     }
 
@@ -28,7 +28,7 @@ public class Flink04_TransForm_Filter_Lambda {
             }
         });
 
-        streamOperator.print();
+        streamOperator.print("anonymous");
 
         env.execute();
     }
@@ -37,7 +37,7 @@ public class Flink04_TransForm_Filter_Lambda {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.fromElements(1,2,3,4,5)
            .filter(value -> value % 2  == 0)
-           .print();
+           .print("lambda");
 
         env.execute();
 

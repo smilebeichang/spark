@@ -12,11 +12,12 @@ import java.util.ArrayList;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/19 0:46
+ * @create 2021/11/21  0:46
  */
 public class Flink04_Sink_Custom {
 
     public static void main(String[] args) throws Exception {
+
         ArrayList<WaterSensor> waterSensors = new ArrayList<>();
         waterSensors.add(new WaterSensor("sensor_1", 1607527992000L, 20));
         waterSensors.add(new WaterSensor("sensor_1", 1607527994000L, 50));
@@ -33,7 +34,7 @@ public class Flink04_Sink_Custom {
 
                     @Override
                     public void open(Configuration parameters) throws Exception {
-                        conn = DriverManager.getConnection("jdbc:mysql://ecs2:3306/ecs?useSSL=false", "root", "sbc006688");
+                        conn = DriverManager.getConnection("jdbc:mysql://ecs2:3306/hive?useSSL=false", "root", "sbc006688");
                         ps = conn.prepareStatement("insert into sensor values(?, ?, ?)");
                     }
 

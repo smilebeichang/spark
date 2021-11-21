@@ -6,17 +6,14 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 22:48
+ * @create 2021/11/20 22:48
  */
 public class Flink01_TransForm_Map_Anonymous {
 
     public static void main(String[] args) throws Exception {
-//        anonymous();
-//        lambda();
-//        staticClass();
-//        anoymous2();
-//        lambda2();
-        staticClass2();
+        anonymous();
+        lambda();
+        staticClass();
     }
 
     public static void anonymous() throws Exception {
@@ -34,19 +31,6 @@ public class Flink01_TransForm_Map_Anonymous {
 
     }
 
-    private static void anoymous2() throws Exception{
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.fromElements(1,2,3,4,5)
-                .map(new MapFunction<Integer, Integer>() {
-                    @Override
-                    public Integer map(Integer value) throws Exception {
-                        return value * value;
-                    }
-                })
-                .print();
-
-        env.execute();
-    }
 
 
     public static void lambda() throws Exception {
@@ -58,14 +42,7 @@ public class Flink01_TransForm_Map_Anonymous {
         env.execute();
     }
 
-    private static void lambda2() throws Exception {
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.fromElements(1,2,3,4,5)
-                .map(ele -> ele * ele)
-                .print();
 
-        env.execute();
-    }
 
 
     public static void staticClass() throws Exception {
@@ -88,21 +65,6 @@ public class Flink01_TransForm_Map_Anonymous {
         }
     }
 
-    private static void   staticClass2() throws Exception {
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.fromElements(1,2,3,4,5)
-                .map(new MyMapFunction2())
-                .print();
-        env.execute();
-    }
-
-    private static class MyMapFunction2 implements MapFunction<Integer,Integer> {
-
-        @Override
-        public Integer map(Integer value) throws Exception {
-            return value * value;
-        }
-    }
 
 }
 

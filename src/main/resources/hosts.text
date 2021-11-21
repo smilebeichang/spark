@@ -1,0 +1,53 @@
+#@SwitchHosts! {"url": null, "icon_idx": 0, "title": "speed"}
+
+# common
+# 这儿是公用 hosts，其内容会插入到各个方案最前面
+# 虚拟机
+192.168.3.102 hadoop102
+192.168.3.103 hadoop103
+192.168.3.104 hadoop104
+192.168.3.202 hadoop202
+192.168.3.203 hadoop203
+192.168.3.204 hadoop204
+
+# 阿里云 百度云
+47.119.157.0 ecs2
+47.119.169.212 ecs3
+8.135.102.7 ecs4
+
+106.12.138.166 bcc2
+182.61.59.65 bcc3
+106.12.138.245 bcc4
+
+192.168.3.162 hadoop162
+192.168.3.163 hadoop163
+192.168.3.164 hadoop164
+
+
+# --------------------------------------------------
+
+# speed
+
+
+#Github
+#140.82.114.3 github.com
+#199.232.69.194 github.global.ssl.fastly.net
+#52.74.223.119 github.com
+#198.51.44.8 github.com
+#198.51.45.8 github.com
+#198.51.44.72 github.com
+#198.51.45.72 github.com
+#205.251.197.3 github.com
+#205.251.198.171 github.com
+#205.251.193.165 github.com
+#205.251.194.8 github.com
+
+#deaver
+#205.185.216.10 download.dbeaver.com
+#205.185.216.42 download.dbeaver.com
+
+# Stack Overflow
+127.0.0.1 ajax.googleapis.com
+
+# 网云穿
+#139.196.165.249 wyc

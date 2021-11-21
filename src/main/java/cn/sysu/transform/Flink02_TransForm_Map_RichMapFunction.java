@@ -7,7 +7,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 23:01
+ * @create 2021/11/20 23:01
  */
 public class Flink02_TransForm_Map_RichMapFunction {
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/19 0:03
+ * @create 2021/11/21 00:35
  */
 public class Flink09_TransForm_KeyedStream {
 
@@ -19,6 +19,10 @@ public class Flink09_TransForm_KeyedStream {
         maxBy();
     }
 
+    /**
+     * 流的形式进行获取聚合值 如 sum  1,5,5
+     *
+     */
     public static void kb() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
@@ -70,8 +74,9 @@ public class Flink09_TransForm_KeyedStream {
                 .fromCollection(waterSensors)
                 .keyBy(WaterSensor::getId);
 
+        // 第二个boolean 参数类似于 开窗
         kbStream
-                .maxBy("vc", true)
+                .maxBy("vc", false)
                 .print("max...");
 
         env.execute();

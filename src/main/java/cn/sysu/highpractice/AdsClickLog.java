@@ -1,22 +1,23 @@
-package cn.sysu.practice;
+package cn.sysu.highpractice;
 
-/**
- * @Author : song bei chang
- * @create 2021/11/21 11:18
- */
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+/**
+ * @Author : song bei chang
+ * @create 2021/11/21 13:34
+ */
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class AdsClickLog {
-    private Long userId;
-    private Long adId;
+    private long userId;
+    private long adsId;
     private String province;
     private String city;
     private Long timestamp;
+
 }
 
 

@@ -11,22 +11,22 @@ import java.util.Random;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/19 21:27
+ * @create 2021/11/21 11:18
  */
 public class Flink04_Project_AppAnalysis_By_Chanel {
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        //chanel(env);
+        chanelBehavior(env);
 
-        all(env);
+        //behavior(env);
 
         env.execute();
     }
 
 
-    public static void chanel(StreamExecutionEnvironment env) {
+    public static void chanelBehavior(StreamExecutionEnvironment env) {
 
         env
                 .addSource(new AppMarketingDataSource())
@@ -35,12 +35,12 @@ public class Flink04_Project_AppAnalysis_By_Chanel {
                 //t(oppo_install,1)  t.f0=oppo_install,t.f1=1
                 .keyBy(t -> t.f0)
                 .sum(1)
-                .print();
+                .print("chanelBehavior");
 
     }
 
 
-    public static void all(StreamExecutionEnvironment env) {
+    public static void behavior(StreamExecutionEnvironment env) {
 
         env
                 .addSource(new AppMarketingDataSource())
@@ -48,7 +48,7 @@ public class Flink04_Project_AppAnalysis_By_Chanel {
                 .returns(Types.TUPLE(Types.STRING, Types.LONG))
                 .keyBy(t -> t.f0)
                 .sum(1)
-                .print();
+                .print("behavior");
 
     }
 

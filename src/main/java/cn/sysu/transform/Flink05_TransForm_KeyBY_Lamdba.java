@@ -8,13 +8,13 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 23:37
+ * @create 2021/11/21 00:23
  */
 public class Flink05_TransForm_KeyBY_Lamdba {
 
     public static void main(String[] args) throws Exception {
         anonymous();
-//        lambda();
+        lambda();
     }
 
 
@@ -32,7 +32,7 @@ public class Flink05_TransForm_KeyBY_Lamdba {
             }
         })
 
-        .print();
+        .print("anonymous");
 
         env.execute();
     }
@@ -41,7 +41,7 @@ public class Flink05_TransForm_KeyBY_Lamdba {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.fromElements(1,2,3,4,5)
            .keyBy(value -> value % 2  == 0 ? "偶数" : "奇数")
-           .print();
+           .print("lambda");
 
         env.execute();
 

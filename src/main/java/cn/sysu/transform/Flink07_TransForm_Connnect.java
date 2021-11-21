@@ -6,7 +6,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 23:52
+ * @create 2021/11/21 00:29
  */
 public class Flink07_TransForm_Connnect {
 

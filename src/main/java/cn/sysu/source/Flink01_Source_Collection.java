@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/18 21:37
+ * @create 2021/11/10 21:37
  */
 public class Flink01_Source_Collection {
 

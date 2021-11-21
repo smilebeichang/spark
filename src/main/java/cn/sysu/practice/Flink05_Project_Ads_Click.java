@@ -10,7 +10,7 @@ import static org.apache.flink.api.common.typeinfo.Types.TUPLE;
 
 /**
  * @Author : song bei chang
- * @create 2021/4/19 22:21
+ * @create 2021/11/21 11:20
  */
 public class Flink05_Project_Ads_Click {
 
