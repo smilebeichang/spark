@@ -5,6 +5,7 @@ import cn.sysu.source.WaterSensor;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;
@@ -19,12 +20,18 @@ import java.time.Duration;
 /**
  * @Author : song bei chang
  * @create 2021/11/21 12:17
+ *
+ * sensor_1,1,20
  */
 public class Flink01_Ordered_WaterMark {
 
 
     public static void main(String[] args) throws Exception {
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment().setParallelism(1);
+        // 设置端口  可选
+        Configuration conf = new Configuration();
+        conf.setInteger("rest.port", 20000);
+
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(conf).setParallelism(1);
 
 
         SingleOutputStreamOperator<WaterSensor> stream = env
@@ -67,6 +74,7 @@ public class Flink01_Ordered_WaterMark {
                     }
                 })
                 .print();
+
         env.execute();
     }
 

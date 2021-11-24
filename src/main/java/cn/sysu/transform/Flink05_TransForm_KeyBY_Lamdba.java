@@ -9,6 +9,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 /**
  * @Author : song bei chang
  * @create 2021/11/21 00:23
+ *
+ * keyBy 后未进行出来,直接输出,无法体现效果
  */
 public class Flink05_TransForm_KeyBY_Lamdba {
 
