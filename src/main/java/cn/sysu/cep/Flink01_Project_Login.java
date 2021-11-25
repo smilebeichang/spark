@@ -1,7 +1,7 @@
 package cn.sysu.cep;
 
 
-import cn.sysu.highpractice.LoginEvent;
+import cn.sysu.middlepractice.LoginEvent;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.cep.CEP;

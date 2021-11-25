@@ -1,4 +1,4 @@
-package cn.sysu.highpractice;
+package cn.sysu.middlepractice;
 
 
 import cn.sysu.practice.UserBehavior;

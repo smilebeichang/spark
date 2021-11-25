@@ -1,4 +1,4 @@
-package cn.sysu.highpractice;
+package cn.sysu.middlepractice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

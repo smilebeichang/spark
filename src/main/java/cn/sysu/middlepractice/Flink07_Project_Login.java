@@ -1,4 +1,4 @@
-package cn.sysu.highpractice;
+package cn.sysu.middlepractice;
 
 
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;

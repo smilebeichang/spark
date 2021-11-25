@@ -1,4 +1,4 @@
-package cn.sysu.highpractice;
+package cn.sysu.middlepractice;
 
 /**
  * @Author : song bei chang
