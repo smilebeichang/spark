@@ -16,12 +16,15 @@ import static org.apache.flink.table.api.Expressions.$;
 /**
  * @Author : song bei chang
  * @create 2021/11/25 0:39
+ * 通过connect连接file
  */
 public class Flink05_TableApi_ToFileSystem {
 
     public static void main(String[] args) {
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
+
         DataStreamSource<WaterSensor> waterSensorStream =
                 env.fromElements(new WaterSensor("sensor_1", 1000L, 10),
                         new WaterSensor("sensor_1", 2000L, 20),
@@ -38,7 +41,7 @@ public class Flink05_TableApi_ToFileSystem {
                 .where($("id").isEqual("sensor_1") )
                 .select($("id"), $("ts"), $("vc"));
 
-        // 创建输出表
+        // 2. 创建输出表
         Schema schema = new Schema()
                 .field("id", DataTypes.STRING())
                 .field("ts", DataTypes.BIGINT())
@@ -49,7 +52,7 @@ public class Flink05_TableApi_ToFileSystem {
                 .withSchema(schema)
                 .createTemporaryTable("sensor");
 
-        // 把数据写入到输出表中
+        // 3. 把数据写入到输出表中
         resultTable.executeInsert("sensor");
     }
 }

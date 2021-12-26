@@ -30,7 +30,7 @@ public class Flink03_WordCount_Unbounded {
         // 1. 创建流式执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        // 2. 读取文件  nc hadoop102 44444  Caused by: java.net.ConnectException: Connection timed out: connect
+        // 2. 读取文件
         /*
             临时用nc开放测试端口
             1. 开启测试端口
@@ -39,8 +39,9 @@ public class Flink03_WordCount_Unbounded {
                 netstat -an | grep 2333
             3. 关闭测试端口
                 ps -ef | grep -v grep | grep nc
+
+                ecs2  47.119.157.0   均Connection timed out: connect  故无法进行测试
          */
-        //DataStreamSource<String> lineDSS = env.socketTextStream("ecs2", 8888);
         DataStreamSource<String> lineDSS = env.socketTextStream("47.119.157.0", 8888);
 
         // 3. 转换数据格式

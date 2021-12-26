@@ -7,6 +7,8 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 /**
  * @Author : song bei chang
  * @create 2021/11/25 1:15
+ *
+ * kafka 只能新增不能有撤回流和更新等操作
  */
 public class Flink09_SQL_Kafka2Kafka {
 

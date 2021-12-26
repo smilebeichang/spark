@@ -22,6 +22,7 @@ public class Flink02_TableApi_Agg {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
+
         DataStreamSource<WaterSensor> waterSensorStream =
                 env.fromElements(
                         new WaterSensor("sensor_1", 1000L, 10),
@@ -33,6 +34,7 @@ public class Flink02_TableApi_Agg {
 
         // 1. 创建表的执行环境
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
+
         // 2. 将流转换成动态表. 表的字段名从pojo的属性名自动抽取
         Table table = tableEnv.fromDataStream(waterSensorStream);
 

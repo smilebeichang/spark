@@ -1,6 +1,7 @@
 package cn.sysu.transform;
 
 import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
@@ -14,26 +15,28 @@ public class Flink01_TransForm_Map_Anonymous {
         anonymous();
         lambda();
         staticClass();
+
     }
 
-    public static void anonymous() throws Exception {
+    private static void anonymous() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        SingleOutputStreamOperator<Integer> streamOperator = env.fromElements(1, 2, 3, 4, 5).map(new MapFunction<Integer, Integer>() {
+        SingleOutputStreamOperator<Integer> streamOperator = env
+                .fromElements(1, 2, 3, 4, 5)
+                .map(new MapFunction<Integer, Integer>() {
 
-            @Override
-            public Integer map(Integer value) throws Exception {
+                    @Override
+                    public Integer map(Integer value) throws Exception {
 
-                return value * value;
-            }
-        });
+                        return value * value;
+                    }
+                });
         streamOperator.print();
         env.execute();
 
     }
 
 
-
-    public static void lambda() throws Exception {
+    private static void lambda() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env
                 .fromElements(1, 2, 3, 4, 5)
@@ -43,9 +46,7 @@ public class Flink01_TransForm_Map_Anonymous {
     }
 
 
-
-
-    public static void staticClass() throws Exception {
+    private static void staticClass() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         env
@@ -57,7 +58,7 @@ public class Flink01_TransForm_Map_Anonymous {
     }
 
 
-    public static class MyMapFunction implements MapFunction<Integer,Integer>{
+    private static class MyMapFunction implements MapFunction<Integer, Integer> {
 
         @Override
         public Integer map(Integer value) throws Exception {

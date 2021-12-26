@@ -16,6 +16,7 @@ import static org.apache.flink.table.api.Expressions.$;
 /**
  * @Author : song bei chang
  * @create 2021/11/25 0:42
+ * 通过connect连接kafka
  */
 public class Flink06_TableApi_ToKafka {
 
@@ -40,7 +41,7 @@ public class Flink06_TableApi_ToKafka {
                 .where($("id").isEqual("sensor_1") )
                 .select($("id"), $("ts"), $("vc"));
 
-        // 创建输出表
+        // 2. 创建输出表
         Schema schema = new Schema()
                 .field("id", DataTypes.STRING())
                 .field("ts", DataTypes.BIGINT())

@@ -25,9 +25,13 @@ public class Flink01_Source_Collection {
         //创建执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<WaterSensor> dataStreamSource = env.fromCollection(waterSensors);
-        dataStreamSource.print();
+        dataStreamSource.print("ds 打印:");
         env.execute();
+
     }
+
+
+
 }
 
 

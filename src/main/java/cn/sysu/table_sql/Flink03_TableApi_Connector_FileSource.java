@@ -21,6 +21,7 @@ import static org.apache.flink.table.api.Expressions.$;
  * @create 2021/11/25 00:59
  *
  * 前面是先得到流, 再转成动态表, 其实动态表也可以直接连接到数据
+ * 通过connect连接file
  */
 public class Flink03_TableApi_Connector_FileSource {
 
@@ -53,6 +54,7 @@ public class Flink03_TableApi_Connector_FileSource {
                 .select($("id"), $("id").count().as("cnt"));
 
         // 4. 把动态表转换成流. 如果涉及到数据的更新, 要用到撤回流. 多个了一个boolean标记
+        // 若有需要可以根据 Tuple2 进行filter 和 map 操作
         DataStream<Tuple2<Boolean, Row>> resultStream = tableEnv.toRetractStream(resultTable, Row.class);
         resultStream.print();
 

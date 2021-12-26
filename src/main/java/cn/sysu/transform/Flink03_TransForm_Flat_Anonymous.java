@@ -21,7 +21,7 @@ public class Flink03_TransForm_Flat_Anonymous {
 
     }
 
-    public static void anonymous() throws Exception {
+    private static void anonymous() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         SingleOutputStreamOperator<Integer> streamOperator = env.fromElements(1, 2, 3, 4, 5).flatMap(new FlatMapFunction<Integer, Integer>() {
@@ -39,7 +39,8 @@ public class Flink03_TransForm_Flat_Anonymous {
     }
 
 
-    public static void lambda() throws Exception {
+    private static void lambda() throws Exception {
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.fromElements(1,2,3,4,5).flatMap((Integer value,Collector<Integer> out) -> {
             out.collect(value * value);
@@ -47,7 +48,6 @@ public class Flink03_TransForm_Flat_Anonymous {
         }).returns(Types.INT).print("lambda");
 
         env.execute();
-
 
     }
 

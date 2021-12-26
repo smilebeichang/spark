@@ -21,10 +21,13 @@ public class Flink11_SQL_Proctime_2 {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
+
         // 1. 创建表的执行环境
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
-        // 创建表, 声明一个额外的列作为处理时间
-        tableEnv.executeSql("create table sensor(id string,ts bigint,vc int,pt_time as PROCTIME()) with("
+
+        // 2. 创建表, 声明一个额外的列作为处理时间
+        tableEnv.executeSql(
+                "create table sensor(id string,ts bigint,vc int,pt_time as PROCTIME()) with("
                 + "'connector' = 'filesystem',"
                 + "'path' = 'input/sensor.txt',"
                 + "'format' = 'csv'"

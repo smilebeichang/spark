@@ -4,8 +4,7 @@ import cn.sysu.source.WaterSensor;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.table.api.Table;
-import org.apache.flink.table.api.Tumble;
+import org.apache.flink.table.api.*;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
 import java.time.Duration;
@@ -39,8 +38,14 @@ public class Flink14_TableApi_Window_1 {
                 );
 
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
+
+        // 将其中一个long型的字段标记为 事件时间
         Table table = tableEnv
                 .fromDataStream(waterSensorStream, $("id"), $("ts").rowtime(), $("vc"));
+
+        // 类似于定义了一个窗口,和之前水印用法类似,可先定义然后使用也可以直接使用(滚动滑动窗口)
+        TumbleWithSizeOnTimeWithAlias wh  = Tumble.over(lit(10).second()).on($("ts")).as("wh");
+        SlideWithSizeAndSlideOnTimeWithAlias ws = Slide.over(lit(5).second()).every(lit(2).second()).on($("ts")).as("ws");
 
         table
                 // 定义滚动窗口并给窗口起一个别名

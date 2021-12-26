@@ -31,7 +31,7 @@ public class Flink12_TableApi_EventTime {
                         new WaterSensor("sensor_1", 4000L, 40),
                         new WaterSensor("sensor_1", 5000L, 50),
                         new WaterSensor("sensor_2", 6000L, 60))
-
+                // 事件时间就会有水印,依靠水印进行推进
                 .assignTimestampsAndWatermarks(
                         WatermarkStrategy
                                 .<WaterSensor>forBoundedOutOfOrderness(Duration.ofSeconds(5))
@@ -42,6 +42,7 @@ public class Flink12_TableApi_EventTime {
         Table table = tableEnv
                 // 用一个额外的字段作为事件时间属性
                 .fromDataStream(waterSensorStream, $("id"), $("ts"), $("vc"), $("et").rowtime());
+
         table.execute().print();
         env.execute();
 

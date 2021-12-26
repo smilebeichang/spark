@@ -16,15 +16,15 @@ public class Flink02_Source_File {
     static String relative_path = "input";
 
     // hdfs 执行无法识别  flink默认未添加hadoop的相关jar,添加依赖即可
-    static String hdfs_path = "hdfs://hadoop162:8020/mycluster/input";
-    // hdfs 暂时未能实现
-    static String hdfs_path_2 = "hdfs://ecs2:9820/flink/input/wordcount.txt";
+    static String hdfs_path = "hdfs://ecs2:9820/flink/input/wordcount.txt";
 
     public static void main(String[] args) throws Exception {
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStreamSource<String> dataStreamSource = env.readTextFile(hdfs_path_2);
-        dataStreamSource.print();
+        DataStreamSource<String> dataStreamSource = env.readTextFile(relative_path);
+        dataStreamSource.print("readTextFile:");
         env.execute();
+
     }
 }
 

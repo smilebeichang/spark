@@ -20,7 +20,7 @@ public class Flink05_TransForm_KeyBY_Lamdba {
     }
 
 
-    public static void anonymous() throws Exception {
+    private static void anonymous() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
        env.fromElements(1, 2, 3, 4, 5)
@@ -39,7 +39,7 @@ public class Flink05_TransForm_KeyBY_Lamdba {
         env.execute();
     }
 
-    public static void lambda() throws Exception {
+    private static void lambda() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.fromElements(1,2,3,4,5)
            .keyBy(value -> value % 2  == 0 ? "偶数" : "奇数")

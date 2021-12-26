@@ -8,6 +8,16 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 /**
  * @Author : song bei chang
  * @create 2021/11/25 23:29
+ *
+ * 每隔 10m 统计一次最近 1h 的热门商品 top
+ *
+ * | 2017-11-26 18:50:00 | 1550635 |          4 |  1 |
+ * | 2017-11-26 18:50:00 | 2491788 |          3 |  2 |
+ * | 2017-11-26 18:50:00 | 4625350 |          3 |  3 |
+ * | 2017-11-26 19:00:00 | 2899195 |          1 |  1 |
+ * | 2017-11-26 19:00:00 | 2052122 |          1 |  2 |
+ * | 2017-11-26 19:00:00 | 4310064 |          1 |  3 |
+ *
  */
 public class Flink01_HotItem_TopN {
 
@@ -34,9 +44,9 @@ public class Flink01_HotItem_TopN {
                         "   'format'='csv')"
         );
 
-        // 每隔 10m 统计一次最近 1h 的热门商品 top
 
-        // 1. 计算每每个窗口内每个商品的点击量
+
+        // 1. 计算每个窗口内每个商品的点击量
         Table t1 = tenv
                 .sqlQuery(
                         "select " +
@@ -47,7 +57,9 @@ public class Flink01_HotItem_TopN {
                                 "where behavior='pv' " +
                                 "group by hop(event_time, interval '10' minute, interval '1' hour), item_id"
                 );
+
         tenv.createTemporaryView("t1", t1);
+
         // 2. 按照窗口开窗, 对商品点击量进行排名
         Table t2 = tenv.sqlQuery(
                 "select " +
@@ -83,9 +95,11 @@ public class Flink01_HotItem_TopN {
                 "   'username' = 'root', " +
                 "   'password' = 'sbc006688' " +
                 ")");
+
         // 4.2 写入到输出表
         t3.executeInsert("hot_item");
     }
+
 }
 
 

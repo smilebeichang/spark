@@ -18,6 +18,7 @@ public class Flink07_SQL_BaseUse {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
+
         DataStreamSource<WaterSensor> waterSensorStream =
                 env.fromElements(
                         new WaterSensor("sensor_1", 1000L, 10),
@@ -29,7 +30,7 @@ public class Flink07_SQL_BaseUse {
 
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
 
-        // 使用sql查询未注册的表
+        // 使用sql查询未注册的表(也就是少了一行代码 .createTemporaryView())
         Table inputTable = tableEnv.fromDataStream(waterSensorStream);
         Table resultTable = tableEnv.sqlQuery("select * from " + inputTable + " where id='sensor_1'");
         tableEnv.toAppendStream(resultTable, Row.class).print();

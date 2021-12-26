@@ -41,6 +41,7 @@ public class Flink15_TableApi_OverWindow_1 {
         Table table = tableEnv
                 .fromDataStream(waterSensorStream, $("id"), $("ts").rowtime(), $("vc"));
 
+
         table
                 .window(Over.partitionBy($("id")).orderBy($("ts")).preceding(UNBOUNDED_ROW).as("w"))
                 .select($("id"), $("ts"), $("vc").sum().over($("w")).as("sum_vc"))
@@ -48,6 +49,9 @@ public class Flink15_TableApi_OverWindow_1 {
                 .print();
 
         env.execute();
+
+        // 使用UNBOUNDED_RANGE
+        //      .window(Over.partitionBy($("id")).orderBy($("ts")).preceding(UNBOUNDED_RANGE).as("w"))
 
     }
 
